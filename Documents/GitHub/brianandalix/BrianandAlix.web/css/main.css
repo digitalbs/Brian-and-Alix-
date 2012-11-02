@@ -1,0 +1,530 @@
+/**********************
+Brian and Alix v1.0
+**********************/
+html, body
+{
+    height:100%;
+}
+body {
+    font-size: 67.5%;
+    line-height: 1.4;
+    background:url(../imgs/common/DSCN0244.JPG) no-repeat;
+    -webkit-background-size:cover;
+    -moz--background-size:cover;
+    -ms-background-size:cover;
+    background-size:cover;
+}
+
+::-moz-selection {
+    background: turquoise;
+    text-shadow: none;
+}
+
+::selection {
+    background: turquoise;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/****************
+Main wrapper 
+****************/
+#wrapper 
+{
+    width: 100%;
+}
+
+#rsvpForm
+{
+    background: white;
+    width: 50%;
+    padding: 10px;
+    margin-top: 25%;
+    box-shadow: 3px -3px #c6ed91, 3px 2px #c6ed91, 9px 4px #a8d966, -1px 8px #a8d966, 9px 8px #a8d966;
+}
+
+/****************
+Top Header
+****************/
+header.common
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:18%;
+    height:100%;
+    background:#fe7c4f;
+    background:rgba(254, 124, 79, 0.7);
+}
+
+header.home
+{
+    width:40%;
+    height:auto;
+    background:rgba(0, 0, 0, 0.5);
+    color:#fff;
+    text-align:center;
+    padding:5%;
+    display:none;
+    margin:14% auto 0 auto;
+}
+
+#btnNav
+{
+    background: #fe7c4f;
+    width:50px;
+    height:50px;
+    display:block;
+    position:absolute;
+    top:5px;
+    right:20px;
+    z-index:10;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
+    -ms-border-radius:25px;
+    border-radius:25px;
+    -webkit-transition:background 0.3s ease-in-out;
+}
+
+#btnNav:hover, #btnNav.active
+{
+    background:#fba385;
+    -webkit-transition:background 0.3s ease-in-out;
+}
+
+#btnNav.active
+{
+    background:#fba385;
+    
+}
+    
+header.common h1 img.small, header.common h1 img.large
+{
+    display:none;
+}
+
+/*****************
+RSVP
+*****************/
+#additionalGuests, #additionalGuests p
+{
+    display:none;
+}
+
+#rsvpForm form ul
+{
+    padding:0;
+    overflow:hidden;
+}
+
+#rsvpForm form li
+{
+    float:left;
+    list-style:none;
+    margin:0 3px;
+}
+
+/*****************
+Keyframes
+*****************/
+@-webkit-keyframes ringOut
+{
+    0%
+    {
+
+        -webkit-transform:scale(.2);
+        opacity:0;
+        right: -39px;
+        top: -40px;
+        -webkit-transform:rotate(24deg);  
+    }
+    
+    10%
+    {
+        -webkit-transform:scale(.5);  
+        right:30px;
+        top:20px;
+        opacity:0.3;
+        -webkit-transform:rotate(24deg);
+    }
+    100%
+    {
+        -webkit-transform:scale(1);
+        right:100px;
+        top:100px;
+        opacity:1;
+        -webkit-transform:rotate(24deg);
+    }
+}
+
+@-webkit-keyframes ringIn
+{
+    0%
+    {
+        -webkit-transform:rotate(-24deg);
+        -webkit-transform:scale(1);
+        right:150px;
+        top:150px;
+        opacity:1;
+    }
+    
+    10%
+    {
+        -webkit-transform:scale(.5);  
+        right:30px;
+        top:20px;
+        opacity:0.3;
+    }
+    100%
+    {
+        -webkit-transform:rotate(0deg);
+        -webkit-transform:scale(.2);
+        opacity:0;  
+    }
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (min-width: 200px) {
+    header.common
+    {
+        width:100%;
+        height:auto;
+        padding:8px 0;
+    }
+    
+    header.common h1
+    {
+        margin:0;
+    }
+
+    header.common h1 img
+    {
+        margin:0 auto;
+    }
+
+    nav.common
+    {
+        height:0px;
+        width:100%;
+        position:absolute;
+        top:66px;
+        right:0;
+        background:#fff;
+        -webkit-transition:height 0.3s ease-in;
+        overflow:hidden;
+    }
+    
+    
+    nav.common.active
+    {
+        height:197px;
+        -webkit-transition:height 0.3s ease-in;
+    }
+    
+    
+    header.common h1 img.small
+    {
+        display:block;    
+    }
+    
+    nav.common ul
+    {
+        padding:0;
+        margin:0;
+    }
+    
+    nav.common a
+    {
+        padding:2% 5%;
+        display:block;
+        background:#fff;
+        border-bottom:1px solid #dfdfdf;
+        color:#fe7c4f;
+        font-weight:bold;
+        text-decoration:none;
+        -webkit-transition:background 0.3s ease-in;
+        -moz-transition:background 0.3s ease-in;
+        -ms-transition:background 0.3s ease-in;
+        transition:background 0.3s ease-in;
+    }
+    
+    nav.common a:hover
+    {
+        background:#abdb67;
+        -webkit-transition:background 0.3s ease-in;
+        -moz-transition:background 0.3s ease-in;
+        -ms-transition:background 0.3s ease-in;
+        transition:background 0.3s ease-in;
+        color:#fff;
+    }
+}
+@media only screen and (min-width: 480px) {
+    header.common
+    {
+        width:64px;
+        height:100%;
+        padding:0;
+    }
+    
+    header.common h1
+    {
+        position:absolute;
+        top:50%;
+        left:10px;
+        width:43px;
+        height:427px;
+        margin-top:-213px;
+    }
+    header.common h1 img
+    {
+        width:43px;
+        height:427px;
+    }
+    
+    header.common h1 img.small
+    {
+        display:none;
+    }
+    
+    header.common h1 img.large
+    {
+        display:block;
+    }
+
+    header.home
+    {
+        margin-top:8%;
+    }
+    
+    
+    
+    nav.common
+    {
+        height:0;
+        position: absolute;
+        right:0;
+        top:0; 
+        width: auto;
+        background:#fff;
+        text-align: center;
+    }
+
+    nav.common.active
+    {
+        height:100%;
+    }
+
+    nav.common ul
+    {
+        margin:94px 0 0 0;
+        padding:12% 0 0 0;
+    }
+
+    nav.common li a
+    {
+        padding:5%;
+        display:block;
+        font-size:1.4em;
+        font-weight:bold;
+        color:#fe7c4f;
+        border:none;
+        display:inline;
+        background:transparent;
+        text-decoration:none;
+        -webkit-transition:color 0.3s ease-in;
+        -moz-transition:color 0.3s ease-in;
+        -ms-transition:color 0.3s ease-in;
+        transition:color 0.3s ease-in;
+    }
+    
+    nav.common li a:hover
+    {
+        background:transparent;
+        color:#abdb67;
+        -webkit-transition:color 0.3s ease-in;
+        -moz-transition:color 0.3s ease-in;
+        -ms-transition:color 0.3s ease-in;
+        transition:color 0.3s ease-in;
+    }   
+    
+    
+    /* RSVP form */
+    #rsvpForm
+    {
+        margin-top:10%;
+        margin-left: 64px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
